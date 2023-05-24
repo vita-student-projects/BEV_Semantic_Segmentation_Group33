@@ -1,11 +1,8 @@
 tensorboardX~=2.1            
-torch==1.8.1+cu111           
 setuptools~=39.0.1           
 opencv-python==4.7.0.72      
 umsgpack~=0.1.0              
 numpy~=1.19.5           
-torchvision~=0.9.1+cu111     
 Pillow~=8.4.0                
 configparser~=5.0.1          
 kornia==0.5.4                
-git+https://github.com/mapillary/inplace_abn.git
