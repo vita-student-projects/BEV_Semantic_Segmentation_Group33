@@ -61,3 +61,22 @@ python -m pip install git+https://github.com/mapillary/inplace_abn.git --no-cach
 ```shell
 python setup.py develop
 ```
+
+## Import dataset
+1. Download NuScenes dataset from http://panoptic-bev.cs.uni-freiburg.de/#dataset.
+2. Make folder for data
+```shell
+cd .. (Back to DLAV)
+mkdir nuscenes
+```
+4. Copy from loacal folder to server:
+  - Open new cmd or exit ssh (make sure to be on local computer)
+```shell
+scp -r /path/to/nuscenes_panopticbev.zip username@izar.epfl.ch:/home/username/DLAV/nuscenes
+```
+  - Full path to file can on Windows be found by right-click -> properties
+5. Unpack
+```shell
+cd nuscenes
+unzip nuscenes_panopticbev.zip
+```
