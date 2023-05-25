@@ -650,7 +650,7 @@ def main(args):
 
         print(f'log_dir = {log_dir}')
         print(f'saved_models_dir = {saved_models_dir}')
-        print(f'config_file = {config_file}')
+        # print(f'config_file = {config_file}')
     else:
         config_file = os.path.join(args.project_root_dir, "experiments", "config", args.config)
 
