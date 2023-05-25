@@ -631,6 +631,8 @@ def validate(model, dataloader, **varargs):
 
 
 def main(args):
+    print('Training model!')
+
     if not args.debug:
         # Initialize multi-processing
         distributed.init_process_group(backend='nccl', init_method='env://')
@@ -645,11 +647,17 @@ def main(args):
     # Create directories
     if not args.debug:
         log_dir, saved_models_dir, config_file = create_run_directories(args, rank)
+
+        print(f'{log_dir = }')
+        print(f'{saved_models_dir = }')
+        print(f'{config_file = }')
     else:
         config_file = os.path.join(args.project_root_dir, "experiments", "config", args.config)
 
+    print('Loading configuration')
     # Load configuration
     config = make_config(args, config_file)
+    print('Loading configuration - END')
 
     # Initialize logging only for rank 0
     if not args.debug and rank == 0:
@@ -658,15 +666,22 @@ def main(args):
     else:
         summary = None
 
+    print('Creating dataloaders')
     # Create dataloaders
     train_dataloader, val_dataloader = make_dataloader(args, config, rank, world_size)
+    print('Creating dataloaders - END')
 
+    print('Creating model')
     # Create model
     model = make_model(args, config, train_dataloader.dataset.num_thing, train_dataloader.dataset.num_stuff)
+    print('Creating model - END')
 
+    print('Freeze model')
     # Freeze modules based on the argument inputs
     model = freeze_modules(args, model)
+    print('Freeze model - END')
 
+    print('Args resume')
     if args.resume:
         assert not args.pre_train, "resume and pre_train are mutually exclusive"
         log_info("Loading snapshot from %s", args.resume, debug=args.debug)
@@ -678,7 +693,9 @@ def main(args):
     else:
         assert not args.eval, "--resume is needed in eval mode"
         snapshot = None
+    print('Args resume - END')
 
+    print('Init gpu')
     # Init GPU stuff
     if not args.debug:
         torch.backends.cudnn.benchmark = config["general"].getboolean("cudnn_benchmark")
@@ -687,11 +704,14 @@ def main(args):
                                         find_unused_parameters=True)
     else:
         model = model.cuda(device)
+    print('Init gpu - END')
 
+    print('Create optimizer')
     # Create optimizer
     optimizer, scheduler, batch_update, total_epochs = make_optimizer(config, model, len(train_dataloader))
     if args.resume:
         optimizer.load_state_dict(snapshot["state_dict"]["optimizer"])
+    print('Create optimizer - END')
 
     # Training loop
     momentum = 1. - 1. / len(train_dataloader)
@@ -722,6 +742,7 @@ def main(args):
         best_score = 0
         global_step = 0
 
+    print('Start training')
     for epoch in range(starting_epoch, total_epochs):
         log_info("Starting epoch %d", epoch + 1, debug=args.debug)
         if not batch_update:
@@ -786,6 +807,7 @@ def main(args):
         if (epoch + 1) % config["general"].getint("val_interval") == 0:
             torch.cuda.empty_cache()
 
+    print('Finished training - End')
 
 if __name__ == "__main__":
     main(parser.parse_args())
