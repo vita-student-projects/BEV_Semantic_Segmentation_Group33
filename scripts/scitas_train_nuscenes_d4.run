@@ -1,0 +1,24 @@
+#!/bin/bash
+#SBATCH --chdir /scratch/izar/laubo
+#SBATCH --nodes 1
+#SBATCH --ntasks 1
+#SBATCH --cpus-per-task 20
+#SBATCH --mem 180G
+#SBATCH --partition gpu
+#SBATCH --gres gpu:1
+#SBATCH --time 70:00:00
+#SBATCH --qos dlav
+#SBATCH --account civil-459-2023
+
+module load gcc/8.4.0-cuda python/3.7.7 cuda/11.1.1
+
+CUDA_VISIBLE_DEVICES=0 \
+/home/laubo/DLAV/venv/panoptic_bev/bin/python -m torch.distributed.launch --nproc_per_node=1 --master_addr=$(hostname -I | cut -d ' ' -f 1) --master_port=$(python /home/laubo/DLAV/PanopticBEV/scripts/get_port.py) /home/laubo/DLAV/PanopticBEV/scripts/train_panoptic_bev.py \
+                                    --run_name=run_d4 \
+                                    --project_root_dir=/home/laubo/DLAV/PanopticBEV \
+                                    --seam_root_dir=/home/laubo/DLAV/nuscenes/nuScenes_panopticbev\
+                                    --dataset_root_dir=/work/scitas-share/datasets/Vita/civil-459/NuScenes_full/US \
+                                    --mode=train \
+                                    --train_dataset=nuScenes \
+                                    --val_dataset=nuScenes \
+                                    --config=nuscenes_d4.ini
