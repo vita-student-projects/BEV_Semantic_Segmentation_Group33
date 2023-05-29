@@ -31,3 +31,5 @@ kornia==0.5.4
 
 Need to install in Sinteract!
 git+https://github.com/mapillary/inplace_abn.git
+
+Sinteract -g gpu:1 -p gpu -c 1 -m 100G -t 00:90:00 -a civil-459-2023 -q dlav
