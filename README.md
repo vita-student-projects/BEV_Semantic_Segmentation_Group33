@@ -80,4 +80,3 @@ scp -r /path/to/nuscenes_panopticbev.zip username@izar.epfl.ch:/home/username/DL
 cd nuscenes
 unzip nuscenes_panopticbev.zip
 ```
-Sinteract -g gpu:1 -p gpu -c 1 -m 10G -t 00:90:00 -r civil-459 -a civil-459-2023
