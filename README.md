@@ -164,5 +164,3 @@ To train the model one submits an sbatch job to SCITAS:
     - Update paths if necessary
 3. Submit job
     - sbatch scitas_train_nuscenes.run
-
-### Inference
