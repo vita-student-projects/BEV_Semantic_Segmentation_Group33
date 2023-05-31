@@ -1,6 +1,7 @@
 # Bird's-Eye-View Panoptic Segmentation Using Monocular Frontal View Images
 
-This is the repository for group 33 in the course Deep Learning for Autonomous Vehicles (CIVIL-459) at EPFL, spring 2023.
+This is the repository for group 33 in the course Deep Learning for Autonomous Vehicles (CIVIL-459) at EPFL, spring 2023. The task of this project is to assign semantic labels to every pixel of an aerial image viewed from a top-down view perspective (bird's eye view). The goal is to segment the image into different regions based on the objects or areas present in the scene, such as roads, vehicles, buildings etc.
+ 
 
 The repository is forked and modified from https://github.com/robot-learning-freiburg/PanopticBEV.
 
