@@ -42,11 +42,11 @@ SQ: Segmentation quality, evaluates how close the segments are to the ground tru
 
 RQ: Recognition qualits metric, identifies how effective the model is to predict a model right
 
-|Dataset  |# h channels|Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
-|---------|------------|------|------|------|----- |------|----- |------|------|------|------|------|------|------|
-|nuscenes | 128        | 64.93| 14.17| -    | -    | 27.87| 21.84| 19.37| 26.28| 2.83 | 0.15 | 22.68| 17.11| 21.72|
-|nuscenes | 96         | 63.98| 15.95|  -   |  -   | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|  23.2|
-|nuscenes | 64         | 67.11| 16.68|  -   |  -   | 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4| 24.16|
+|Dataset  |# h channels|Road  |Side. |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
+|---------|------------|------|------|------|----- |------|------|------|------|------|------|------|
+|nuscenes | 128        | 64.93| 14.17| 27.87| 21.84| 19.37| 26.28| 2.83 | 0.15 | 22.68| 17.11| 21.72|
+|nuscenes | 96         | 63.98| 15.95| 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|  23.2|
+|nuscenes | 64         | 67.11| 16.68| 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4| 24.16|
 
 We notice that overall we achieved better results with 64 hidden channels. Our results are slightly better than the ones from the paper with one epoch but since we couldn't train with 30 epochs we can't really conclude anything.
 
