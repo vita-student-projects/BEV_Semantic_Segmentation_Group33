@@ -9,8 +9,38 @@ predicting- and controlling systems in the autonomous vehicle. The paper we chos
 
 The repository is forked and modified from https://github.com/robot-learning-freiburg/PanopticBEV.
 
+# Content
+1. Contributions
+2. Experiments
+3. Results
+4. Conclusion
+5. Setup and running code
 
-## Setup on SCITAS
+## 1. Contributions
+
+## 2. Experiments
+
+## 3. Results
+
+In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset.
+
+|Dataset  | Method      | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
+|---------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
+|nuscenes | PanopticBEV | 19.84 | 64.38 | 28.44 | 14.64 | 66.37 | 20.39 | 23.30 | 63.05 | 33.81 | 
+|nuscenes | 96          | 10.18 | 48.35 | 15.61 | 1.83  | 30.63 | 3.01  | 15.75 | 60.17 | 24.01 |
+|nuscenes | 64          | 10.09 | 55.06 | 15.38 | 1.69  | 46.44 | 2.81  | 15.69 | 60.81 | 23.75 |
+
+|Dataset  | Method     |Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
+|---------|------------|------|------|------|----- |------|----- |------|------|------|------|------|------|------|
+|nuscenes | PanopticBEV| 75.50| 40.08| 28.68| 16.41|      | 40.91| 35.58| 48.29| 4.76 | 8.46 | 42.48| 15.30| 32.4 |
+|nuscenes | 96         | 63.98| 15.95|      |      | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|      |
+|nuscenes | 64         | 67.11| 16.68|      |      | 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4|      |
+
+## 4. Conclusion
+
+
+## 5. Setup and running code 
+### Setup on SCITAS
 1. Connect to izar server
 ```shell
 ssh -X username@izar.epfl.ch
@@ -67,7 +97,7 @@ python -m pip install git+https://github.com/mapillary/inplace_abn.git --no-cach
 python setup.py develop
 ```
 
-## Import dataset
+### Import dataset
 For this project, we use two datasets, the nuscenes dataset and a modified version of it: nuscenes PanopticBEV. The first one consists of 1000 20 seconds long driving scenes collected in Boston and Sinagapore. The second one is a new dataset introduced in the paper that provides ground truths for the nuscenes dataset.
 The nuscenes dataset is already in the shared directory on scitas.
 
@@ -88,21 +118,10 @@ scp -r /path/to/nuscenes_panopticbev.zip username@izar.epfl.ch:/home/username/DL
 cd nuscenes
 unzip nuscenes_panopticbev.zip
 ```
-## Contributions
 
-## Results
+### Training model
+To train the model one submits an sbatch job to SCITAS:
 
-In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset.
-
-|Dataset  | Method      | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
-|---------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-|nuscenes | PanopticBEV | 19.84 | 64.38 | 28.44 | 14.64 | 66.37 | 20.39 | 23.30 | 63.05 | 33.81 | 
-|nuscenes | 96          | 10.18 | 48.35 | 15.61 | 1.83  | 30.63 | 3.01  | 15.75 | 60.17 | 24.01 |
-|nuscenes | 64          | 10.09 | 55.06 | 15.38 | 1.69  | 46.44 | 2.81  | 15.69 | 60.81 | 23.75 |
-
-|Dataset  | Method     |Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
-|---------|------------|------|------|------|----- |------|----- |------|------|------|------|------|------|------|
-|nuscenes | PanopticBEV| 75.50| 40.08| 28.68| 16.41|      | 40.91| 35.58| 48.29| 4.76 | 8.46 | 42.48| 15.30| 32.4 |
-|nuscenes | 96         | 63.98| 15.95|      |      | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|      |
-|nuscenes | 64         | 67.11| 16.68|      |      | 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4|      |
-## Conclusion
+1. Change experiments/config/nuscenes.ini if necessary
+ - Continue training on model: weights = "Path to stored weights"
+ - "epochs": # epochs (1 epoch ~ 6 hours)
