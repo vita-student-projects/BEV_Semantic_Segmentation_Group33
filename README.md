@@ -22,7 +22,7 @@ The repository is forked and modified from https://github.com/robot-learning-fre
 
 ## 3. Results
 
-In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset.
+In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We compare our results (64 and 96 hidden channels) with the results from the paper (PanopticBEV) in the following tables:
 
 |Dataset  | Method      | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
 |---------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
