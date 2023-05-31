@@ -54,7 +54,7 @@ We notice that overall we achieved better results with 64 hidden channels. Our r
 You can download our models and checkpoints from this link: https://drive.google.com/drive/folders/1BOfgEw2zB_JvMVTVpVFBbc5suGKHAuhx?usp=share_link
 
 ## 4. Conclusion
-The main challenge of this project was to understand how to setup and run the code on SCITAS. It took us a lot of time and this is the reason why we don't have more results to present
+To have more accurate comparisons one could train our models with 30 epochs like they did in the paper, then we would be able to actually compare the performances. The 64 and 96 models use fewer informations from the semantic segmentation head and more from the instance segmentation head so to improve the performances one could try to improve the relationship between the two heads.
 
 
 ## 5. Setup and running code 
