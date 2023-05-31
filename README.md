@@ -88,6 +88,8 @@ scp -r /path/to/nuscenes_panopticbev.zip username@izar.epfl.ch:/home/username/DL
 cd nuscenes
 unzip nuscenes_panopticbev.zip
 ```
+## Contributions
+
 ## Results
 
 In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset.
