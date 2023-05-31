@@ -21,13 +21,14 @@ The repository is forked and modified from https://github.com/robot-learning-fre
 
 We chose to focus our efforts on the Semantic Segmentation Head in the model. PanopticBEV is one of the few models that also incorporates instance segmentation and the results from the instance segmentation head is combined with the results from the semantic segmentation head. We therefore hypothesized that changing the level of detail in the semantic segmentation head will give more prevelance for the instance segmentation head. Thus the parts where the instance segmentation head performes better will have more weight in the final output. 
 
-Our contribution is aimed at the size of the convolutional layer after the concatination of the inputs from the dense transformer. This convolutional layer has a certain number of hidden channels wich is the output of this layer. We ran experiments with different sizes in this hidden layer.
+Our contribution is aimed at the size of the convolutional layer after the concatination of the inputs from the dense transformer. This convolutional layer has a certain number of hidden channels. We ran experiments with different sizes in this hidden layer.
 
 ## 2. Experiments
+We trained the model for 10 epochs with the standard 128 hidden channels in the semantic segmentation concolutional layer. We then performed one more epoch for three different versions. One version continuing 128 hidden channels for a baseline, and then two different version with 96 and 64 hidden channels.
 
 ## 3. Results
 
-In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We were only able to train with one epoch. We compare our results (64 and 96 hidden channels) with the results from the paper (128 hidden channels with one epoch) in the following tables:
+In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We were only able to train with one epoch. We compare our results (64 and 96 hidden channels) with the results from the paper (128 hidden channels) in the following tables:
 All values are in [%].
 
 |Dataset  |# h channels | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
