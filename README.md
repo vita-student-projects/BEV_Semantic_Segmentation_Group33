@@ -23,6 +23,7 @@ The repository is forked and modified from https://github.com/robot-learning-fre
 ## 3. Results
 
 In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We compare our results (64 and 96 hidden channels) with the results from the paper (PanopticBEV) in the following tables:
+All values are in [%].
 
 |Dataset  | Method      | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
 |---------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
@@ -35,6 +36,8 @@ In the paper, they also have results for the Kitti-360 dataset but due to lack o
 |nuscenes | PanopticBEV| 75.50| 40.08| 28.68| 16.41|      | 40.91| 35.58| 48.29| 4.76 | 8.46 | 42.48| 15.30| 32.4 |
 |nuscenes | 96         | 63.98| 15.95|      |      | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|      |
 |nuscenes | 64         | 67.11| 16.68|      |      | 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4|      |
+
+We notice that overall we achieved better results with 64 hidden channels. Our result are realatively far from the PanopticBEV's one of the reasons could be the number of epochs we used (1 due to time constraints) and they trained with 30.
 
 ## 4. Conclusion
 
