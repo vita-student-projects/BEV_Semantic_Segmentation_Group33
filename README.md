@@ -90,6 +90,8 @@ unzip nuscenes_panopticbev.zip
 ```
 ## Results
 
+In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset.
+
 |Dataset  | Method      | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
 |---------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
 |nuscenes | PanopticBEV | 19.84 | 64.38 | 28.44 | 14.64 | 66.37 | 20.39 | 23.30 | 63.05 | 33.81 | 
