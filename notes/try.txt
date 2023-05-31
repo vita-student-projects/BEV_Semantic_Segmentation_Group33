@@ -1,7 +1,0 @@
-Change backbone:
-
-valid_models = ['efficientnet-b'+str(i) for i in range(9)]
-
-Change experiments/config/kitti.ini -> base
-
-Train with fewer epochs for less time
