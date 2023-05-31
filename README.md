@@ -17,6 +17,11 @@ The repository is forked and modified from https://github.com/robot-learning-fre
 5. Setup and running code
 
 ## 1. Contributions
+![Architecture](images/arch_red_box.png)
+
+We chose to focus our efforts on the Semantic Segmentation Head in the model. PanopticBEV is one of the few models that also incorporates instance segmentation and the results from the instance segmentation head is combined with the results from the semantic segmentation head. We therefore hypothesized that changing the level of detail in the semantic segmentation head will give more prevelance for the instance segmentation head. Thus the parts where the instance segmentation head performes better will have more weight in the final output. 
+
+Our contribution is aimed at the size of the convolutional layer after the concatination of the inputs from the dense transformer. This convolutional layer has a certain number of hidden channels wich is the output of this layer. We ran experiments with different sizes in this hidden layer.
 
 ## 2. Experiments
 
