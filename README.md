@@ -49,7 +49,7 @@ RQ: Recognition qualits metric, identifies how effective the model is to predict
 |nuscenes | 96         | 63.98| 15.95| 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|  23.2|
 |nuscenes | 64         | 67.11| 16.68| 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4| 24.16|
 
-We notice that overall we achieved better results with 64 hidden channels. Our results are slightly better than the ones from the paper with one epoch but since we couldn't train with 30 epochs we can't really conclude anything.
+We notice that overall we achieved better results with 64 hidden channels. Our results are slightly better than the ones from the paper with one epoch. To be able to compare with the final version in the paper however, we would need to train it for the full 30 epochs.
 
 You can download our models and checkpoints from this link: https://drive.google.com/drive/folders/1BOfgEw2zB_JvMVTVpVFBbc5suGKHAuhx?usp=share_link
 
