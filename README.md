@@ -63,7 +63,9 @@ python setup.py develop
 ```
 
 ## Import dataset
-1. Download NuScenes dataset from http://panoptic-bev.cs.uni-freiburg.de/#dataset.
+For this project, we use two datasets, the nuscenes dataset and a modified version of it: nuscenes PanopticBEV. The first one consists of 1000 20 seconds long driving scenes collected in Boston and Sinagapore. The second one is a new dataset introduced in the paper that provides ground truths for the nuscenes dataset.
+
+1. Download NuScenes PanopticBEV dataset from http://panoptic-bev.cs.uni-freiburg.de/#dataset.
 2. Make folder for data
 ```shell
 cd .. (Back to DLAV)
