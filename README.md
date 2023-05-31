@@ -27,7 +27,7 @@ Our contribution is aimed at the size of the convolutional layer after the conca
 
 ## 3. Results
 
-In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We were only able to train with one epoch. We compare our results (64 and 96 hidden channels) with the results from the paper (128 hidden channels with on epoch) in the following tables:
+In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We were only able to train with one epoch. We compare our results (64 and 96 hidden channels) with the results from the paper (128 hidden channels with one epoch) in the following tables:
 All values are in [%].
 
 |Dataset  |# h channels | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
