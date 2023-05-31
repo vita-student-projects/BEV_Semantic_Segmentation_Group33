@@ -22,16 +22,16 @@ The repository is forked and modified from https://github.com/robot-learning-fre
 
 ## 3. Results
 
-In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We compare our results (64 and 96 hidden channels) with the results from the paper (PanopticBEV) in the following tables:
+In the paper, they also have results for the Kitti-360 dataset but due to lack of time and ressources, we could only test our modifications on the nuscenes dataset. We were only able to train with one epoch. We compare our results (64 and 96 hidden channels) with the results from the paper (128 hidden channels with on epoch) in the following tables:
 All values are in [%].
 
-|Dataset  | Method      | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
+|Dataset  |# h channels | PQ    | SQ    | RQ    | PQ_th | SQ_th | RQ_th | PQ_st | SQ_st | RQ_st |
 |---------|-------------|-------|-------|-------|-------|-------|-------|-------|-------|-------|
-|nuscenes | PanopticBEV | 19.84 | 64.38 | 28.44 | 14.64 | 66.37 | 20.39 | 23.30 | 63.05 | 33.81 | 
+|nuscenes | 128         | 19.84 | 64.38 | 28.44 | 14.64 | 66.37 | 20.39 | 23.30 | 63.05 | 33.81 | 
 |nuscenes | 96          | 10.18 | 48.35 | 15.61 | 1.83  | 30.63 | 3.01  | 15.75 | 60.17 | 24.01 |
 |nuscenes | 64          | 10.09 | 55.06 | 15.38 | 1.69  | 46.44 | 2.81  | 15.69 | 60.81 | 23.75 |
 
-|Dataset  | Method     |Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
+|Dataset  |# h channels|Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
 |---------|------------|------|------|------|----- |------|----- |------|------|------|------|------|------|------|
 |nuscenes | PanopticBEV| 77.32| 28.55| -    | -    | 36.72| 35.06| 33.56| 36.65| 4.98 | 9.63 | 40.53| 33.47| 33.65|
 |nuscenes | 96         | 63.98| 15.95|  -   |  -   | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|  23.2|
