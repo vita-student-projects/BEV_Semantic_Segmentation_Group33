@@ -122,13 +122,19 @@ cd nuscenes
 unzip nuscenes_panopticbev.zip
 ```
 
+### Pretrained weights
+1. Download weights from ONEDRIVE_WEIGHTS
+2. Copy to server
+
 ### Training model
 To train the model one submits an sbatch job to SCITAS:
 
-1. Edit experiments/config/nuscenes.ini if necessary
-    - Continue training on model: weights = "Path to stored weights"
-    - "epochs": # epochs (1 epoch ~ 6 hours)
-2. Edit scripts/scitas_train_nuscenes.run
+1. Edit **experiments/config/nuscenes.ini** if necessary
+    - epochs: 1 epoch ~ 6 hours
+    - Continue training on pretrained weights: 
+      - weights = "Path to stored weights" 
+      - Ex.: /home/USERNAME/DLAV/pretrained_models/best_model.pth
+2. Edit **scripts/scitas_train_nuscenes.run**
     - Change USERNAME to own username
     - Change run_name to preferred name
     - Update paths if necessary
