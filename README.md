@@ -154,6 +154,7 @@ To train the model one submits an sbatch job to SCITAS:
 
 1. Edit **experiments/config/nuscenes.ini** if necessary
     - epochs: 1 epoch ~ 6 hours
+    - Change sem_hidden_channels (Optional, standard = 128)
     - Continue training on pretrained weights: 
       - weights = "Path to stored weights" 
       - Ex.: /home/USERNAME/DLAV/pretrained_models/best_model.pth
