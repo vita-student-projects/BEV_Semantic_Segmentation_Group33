@@ -123,7 +123,7 @@ unzip nuscenes_panopticbev.zip
 ```
 
 ### Pretrained weights
-1. Download weights from ONEDRIVE_WEIGHTS
+1. Download weights from [ONEDRIVE_WEIGHTS](https://drive.google.com/drive/u/3/folders/1qk4PwHl_1JtyzEEZW-lbbbAh2GY5y8ff)
 2. Copy to server
 ```shell
 In SCITAS:
