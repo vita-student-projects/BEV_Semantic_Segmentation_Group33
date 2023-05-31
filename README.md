@@ -32,7 +32,9 @@ All values are in [%].
 |nuscenes | 64          | 10.09 | 55.06 | 15.38 | 1.69  | 46.44 | 2.81  | 15.69 | 60.81 | 23.75 |
 
 PQ: Panoptic quality metric, captures performance for all classes (stuff and things)
+
 SQ: Segmentation quality, evaluates how close the segments are to the ground truths
+
 RQ: Recognition qualits metric, identifies how effective the model is to predict a model right
 
 |Dataset  |# h channels|Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
