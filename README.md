@@ -33,9 +33,9 @@ All values are in [%].
 
 |Dataset  | Method     |Road  |Side. |Build.|Wall  |Manm. | Veg. | Ter. | Occ. | Per. | 2-Wh.| Car  | Truck| mIoU |
 |---------|------------|------|------|------|----- |------|----- |------|------|------|------|------|------|------|
-|nuscenes | PanopticBEV| 75.50| 40.08| 28.68| 16.41|      | 40.91| 35.58| 48.29| 4.76 | 8.46 | 42.48| 15.30| 32.4 |
-|nuscenes | 96         | 63.98| 15.95|      |      | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|      |
-|nuscenes | 64         | 67.11| 16.68|      |      | 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4|      |
+|nuscenes | PanopticBEV| 77.32| 28.55| -    | -    | 36.72| 35.06| 33.56| 36.65| 4.98 | 9.63 | 40.53| 33.47| 32.4 |
+|nuscenes | 96         | 63.98| 15.95|  -   |  -   | 29.17| 27.65| 23.13| 28.09|  2.3 |  0.61|  22.8| 18.37|      |
+|nuscenes | 64         | 67.11| 16.68|  -   |  -   | 28.57| 32.22| 19.17| 27.72| 2.69 |  0.09| 24.93|  22.4|      |
 
 We notice that overall we achieved better results with 64 hidden channels. Our results are realatively far from the PanopticBEV's, one of the reasons could be the number of epochs we used (1 due to time constraints) and they trained with 30.
 
