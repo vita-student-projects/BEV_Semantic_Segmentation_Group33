@@ -125,6 +125,14 @@ unzip nuscenes_panopticbev.zip
 ### Pretrained weights
 1. Download weights from ONEDRIVE_WEIGHTS
 2. Copy to server
+```shell
+In SCITAS:
+cd DLAV
+mkdir pretrained_weights
+
+On local computer:
+scp path/to/weights.pth username@izar.epfl.ch:/home/USERNAME/DLAV/pretrained_weights
+```
 
 ### Training model
 To train the model one submits an sbatch job to SCITAS:
