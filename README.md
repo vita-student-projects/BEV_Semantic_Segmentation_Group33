@@ -46,6 +46,7 @@ RQ: Recognition qualits metric, identifies how effective the model is to predict
 We notice that overall we achieved better results with 64 hidden channels. Our results are slightly better than the ones from the paper with one epoch but since we couldn't train with 30 epochs we can't really conclude anything.
 
 ## 4. Conclusion
+The main challenge of this project was to understand how to setup and run the code on SCITAS. It took us a lot of time and this is the reason why we don't have more results to present
 
 
 ## 5. Setup and running code 
